@@ -1,35 +1,31 @@
 <!doctype html>
 <html lang="id">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#E31E24">
-<title>Kasmate — Kas kelas, lebih tertata</title>
-<link rel="stylesheet" href="./css/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#E31E24">
+    <title>Kasmate — Kas kelas, lebih tertata</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-<div class="shell">
-<header class="topbar">
+    <div class="shell">
+        <header class="topbar">
             <a class="brand" href="index.html">
-<img class="brand-image" src="./assets/kasmate-logo.png"
-                    alt="Logo Kasmate">Kasmate</a>
-<button class="mobile-menu"
-                onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+                <img class="brand-image" src="./assets/kasmate-logo.png" alt="Logo Kasmate">Kasmate</a>
+            <button class="mobile-menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
             <nav class="nav" id="nav">
-<a data-page="home"  href="index.html">Home</a>
-<a
-                    data-page="about" href="about.html">About</a>
-<a data-page="dashboard"
-                    href="dashboard.html">Dashboard</a>
-<a data-page="transactions" href="transactions.html">Transaksi</a>
-<a data-page="settings"
-                    href="settings.html">Settings</a>
-<button class="nav-cta" id="accountBtn"
-                    onclick="accountAction()">Masuk</button>
-</nav>
+                <a data-page="home" href="index.html">Home</a>
+                <a data-page="about" href="about.html">About</a>
+                <a data-page="dashboard" href="dashboard.html">Dashboard</a>
+                <a data-page="transactions" href="transactions.html">Transaksi</a>
+                <a data-page="settings" href="settings.html">Settings</a>
+                <button class="nav-cta" id="accountBtn" onclick="accountAction()">Masuk</button>
+            </nav>
         </header>
-<main>
-<section class="page active" id="settings">
+        <main>
+            <section class="page active" id="settings">
                 <div class="panel-wrap">
                     <div class="panel-head">
                         <div>
@@ -42,112 +38,113 @@
                             <h3 data-t="appearance">Tampilan</h3>
                             <div class="row">
                                 <div>
-<strong data-t="theme">Tema</strong>
-<small data-t="themeDesc">Pilih tampilan yang
+                                    <strong data-t="theme">Tema</strong>
+                                    <small data-t="themeDesc">Pilih tampilan yang
                                         nyaman untukmu.</small>
-</div>
+                                </div>
                             </div>
                             <div class="theme-toggle-row">
-<div class="theme-toggle-copy">
-<strong data-t="theme">Tema</strong>
-<small data-t="themeDesc">Pilih tampilan yang nyaman untukmu.</small>
-<span id="themeModeLabel" aria-live="polite">Terang</span>
-</div>
-<button type="button" class="theme-switch" id="themeSwitch" role="switch" aria-checked="false" aria-label="Tema" onclick="toggleTheme()">
-<span class="theme-switch-thumb" aria-hidden="true">
-</span>
-</button>
-</div>
+                                <div class="theme-toggle-copy">
+                                    <strong data-t="theme">Tema</strong>
+                                    <small data-t="themeDesc">Pilih tampilan yang nyaman untukmu.</small>
+                                    <span id="themeModeLabel" aria-live="polite">Terang</span>
+                                </div>
+                                <button type="button" class="theme-switch" id="themeSwitch" role="switch"
+                                    aria-checked="false" aria-label="Tema" onclick="toggleTheme()">
+                                    <span class="theme-switch-thumb" aria-hidden="true">
+                                    </span>
+                                </button>
+                            </div>
                             <div class="field" style="margin-top:22px">
-<label for="languageSelect"
-                                    data-t="language">Bahasa</label>
-<select id="languageSelect"
-                                    onchange="setLanguage(this.value)">
+                                <label for="languageSelect" data-t="language">Bahasa</label>
+                                <select id="languageSelect" onchange="setLanguage(this.value)">
                                     <option value="id">🇮🇩 Bahasa Indonesia</option>
                                     <option value="en">🇬🇧 English</option>
                                 </select>
-</div>
+                            </div>
                         </div>
                         <div class="panel" id="profilePanel">
                             <h3 data-t="profile">Profil</h3>
                             <div class="profile-locked" id="profileLocked">Masuk atau daftar untuk melihat dan mengubah
                                 profilmu. <button onclick="go('login')">Masuk</button>
-</div>
+                            </div>
                             <form id="profileForm">
                                 <div class="field">
-<label for="profileName" data-t="name">Nama</label>
-<input
-                                        id="profileName" required placeholder="Nama lengkap">
-</div>
+                                    <label for="profileName" data-t="name">Nama</label>
+                                    <input id="profileName" required placeholder="Nama lengkap">
+                                </div>
                                 <div class="field">
-<label for="profileClass" id="profileClassLabel" data-t="class">Kelas</label>
-<select id="profileClass">
-<option value="">Masuk untuk memuat kelas</option>
-</select>
-</div>
-<button class="primary" type="submit"
-                                    data-t="saveProfile">Simpan profil</button>
+                                    <label for="profileClass" id="profileClassLabel" data-t="class">Kelas</label>
+                                    <select id="profileClass">
+                                        <option value="">Masuk untuk memuat kelas</option>
+                                    </select>
+                                </div>
+                                <button class="primary" type="submit" data-t="saveProfile">Simpan profil</button>
                                 <div class="notice" id="profileNotice">
-</div>
+                                </div>
                             </form>
                             <form id="passwordForm" class="password-form">
-<h3 data-t="changePassword">Ubah kata sandi</h3>
-<div class="field">
-<label for="currentPassword" data-t="currentPassword">Kata sandi saat ini</label>
-<input id="currentPassword" type="password" autocomplete="current-password" required>
-</div>
-<div class="field">
-<label for="newPassword" data-t="newPassword">Kata sandi baru</label>
-<input id="newPassword" type="password" minlength="8" autocomplete="new-password" required>
-</div>
-<div class="field">
-<label for="confirmPassword" data-t="confirmPassword">Konfirmasi kata sandi baru</label>
-<input id="confirmPassword" type="password" minlength="8" autocomplete="new-password" required>
-</div>
-<button class="secondary" type="submit" data-t="updatePassword">Ubah kata sandi</button>
-<div class="notice" id="passwordNotice">
-</div>
-</form>
+                                <h3 data-t="changePassword">Ubah kata sandi</h3>
+                                <div class="field">
+                                    <label for="currentPassword" data-t="currentPassword">Kata sandi saat ini</label>
+                                    <input id="currentPassword" type="password" autocomplete="current-password"
+                                        required>
+                                </div>
+                                <div class="field">
+                                    <label for="newPassword" data-t="newPassword">Kata sandi baru</label>
+                                    <input id="newPassword" type="password" minlength="8" autocomplete="new-password"
+                                        required>
+                                </div>
+                                <div class="field">
+                                    <label for="confirmPassword" data-t="confirmPassword">Konfirmasi kata sandi
+                                        baru</label>
+                                    <input id="confirmPassword" type="password" minlength="8"
+                                        autocomplete="new-password" required>
+                                </div>
+                                <button class="secondary" type="submit" data-t="updatePassword">Ubah kata sandi</button>
+                                <div class="notice" id="passwordNotice">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </section>
-</main>
-<footer class="footer">
+        </main>
+        <footer class="footer">
             <a class="brand" href="index.html">
-<img class="brand-image" src="./assets/kasmate-logo.png"
-                    alt="Logo Kasmate">Kasmate</a>
-<span>© 2026 Kasmate · Urusan kas kelas jadi lebih mudah.</span>
+                <img class="brand-image" src="./assets/kasmate-logo.png" alt="Logo Kasmate">Kasmate</a>
+            <span>© 2026 Kasmate · Urusan kas kelas jadi lebih mudah.</span>
         </footer>
-</div>
-<div class="modal-back" id="modalBack" onclick="if(event.target===this)closeModal()">
-<div class="modal">
-<h2>Daftarkan kelas</h2>
-<p>Buat ruang baru untuk mengelola kas kelas.</p>
-<div class="field">
-<label>Nama kelas</label>
-<input id="newClassName" placeholder="Contoh: XI PPLG 2">
-</div>
-<div class="field">
-<label>Nama sekolah</label>
-<input id="newSchool" placeholder="Contoh: SMK Telkom Bandung">
-</div>
-<div class="field">
-<label>Tahun ajaran</label>
-<select id="newYear">
-<option>2026/2027</option>
-<option>2025/2026</option>
-</select>
-</div>
-<div class="modal-actions">
-<button class="secondary" onclick="closeModal()">Batal</button>
-<button class="primary" onclick="addClass()">Buat kelas</button>
-</div>
-</div>
-</div>
-<div class="toast" id="toast">
-</div>
-<script src="./js/app.js">
-</script>
+    </div>
+    <div class="modal-back" id="modalBack" onclick="if(event.target===this)closeModal()">
+        <div class="modal">
+            <h2>Daftarkan kelas</h2>
+            <p>Buat ruang baru untuk mengelola kas kelas.</p>
+            <div class="field">
+                <label>Nama kelas</label>
+                <input id="newClassName" placeholder="Contoh: XI PPLG 2">
+            </div>
+            <div class="field">
+                <label>Nama sekolah</label>
+                <input id="newSchool" placeholder="Contoh: SMK Telkom Bandung">
+            </div>
+            <div class="field">
+                <label>Tahun ajaran</label>
+                <select id="newYear">
+                    <option>2026/2027</option>
+                    <option>2025/2026</option>
+                </select>
+            </div>
+            <div class="modal-actions">
+                <button class="secondary" onclick="closeModal()">Batal</button>
+                <button class="primary" onclick="addClass()">Buat kelas</button>
+            </div>
+        </div>
+    </div>
+    <div class="toast" id="toast">
+    </div>
+    <script src="./js/app.js">
+    </script>
 </body>
+
 </html>

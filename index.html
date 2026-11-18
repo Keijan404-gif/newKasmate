@@ -1,92 +1,88 @@
 <!doctype html>
 <html lang="id">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#E31E24">
-<title>Kasmate — Kas kelas, lebih tertata</title>
-<link rel="stylesheet" href="./css/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#E31E24">
+    <title>Kasmate — Kas kelas, lebih tertata</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-<div class="shell">
-<header class="topbar">
+    <div class="shell">
+        <header class="topbar">
             <a class="brand" href="index.html">
-<img class="brand-image" src="./assets/kasmate-logo.png"
-                    alt="Logo Kasmate">Kasmate</a>
-<button class="mobile-menu"
-                onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+                <img class="brand-image" src="./assets/kasmate-logo.png" alt="Logo Kasmate">Kasmate</a>
+            <button class="mobile-menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
             <nav class="nav" id="nav">
-<a data-page="home"  href="index.html">Home</a>
-<a
-                    data-page="about" href="about.html">About</a>
-<a data-page="dashboard"
-                    href="dashboard.html">Dashboard</a>
-<a data-page="transactions" href="transactions.html">Transaksi</a>
-<a data-page="settings"
-                    href="settings.html">Settings</a>
-<button class="nav-cta" id="accountBtn"
-                    onclick="accountAction()">Masuk</button>
-</nav>
+                <a data-page="home" href="index.html">Home</a>
+                <a data-page="about" href="about.html">About</a>
+                <a data-page="dashboard" href="dashboard.html">Dashboard</a>
+                <a data-page="transactions" href="transactions.html">Transaksi</a>
+                <a data-page="settings" href="settings.html">Settings</a>
+                <button class="nav-cta" id="accountBtn" onclick="accountAction()">Masuk</button>
+            </nav>
         </header>
-<main>
-<section class="page active" id="home">
+        <main>
+            <section class="page active" id="home">
                 <div class="hero">
                     <div>
                         <h1>Kas kelas,<br>
-<em>lebih tertata.</em>
-</h1>
+                            <em>lebih tertata.</em>
+                        </h1>
                         <p class="lead">Kelola uang kas, catat iuran, dan pantau saldo kelas dalam satu tempat. Biar
                             urusan kas jadi jelas untuk semua.</p>
                         <div class="actions">
-<button class="primary" onclick="go('register')">Mulai kelola kas
+                            <button class="primary" onclick="go('register')">Mulai kelola kas
                                 <span>→</span>
-</button>
-<button class="secondary" onclick="go('about')">Kenali
+                            </button>
+                            <button class="secondary" onclick="go('about')">Kenali
                                 Kasmate</button>
-</div>
+                        </div>
                         <div class="trust">
                             <div class="avatars">
-<span>👩🏻</span>
-<span>👨🏽</span>
-<span>👩🏾</span>
-</div>Dirancang
+                                <span>👩🏻</span>
+                                <span>👨🏽</span>
+                                <span>👩🏾</span>
+                            </div>Dirancang
                             untuk kelas yang kompak
                         </div>
                     </div>
                     <div class="hero-art">
                         <div class="blob">
-</div>
+                        </div>
                         <div class="dash-card">
                             <div class="dash-head">
-<span>Ringkasan Kas</span>
-<span class="badge">● Aktif</span>
-</div>
+                                <span>Ringkasan Kas</span>
+                                <span class="badge">● Aktif</span>
+                            </div>
                             <div class="sub">Saldo saat ini</div>
                             <div class="balance">—</div>
                             <div class="sub">Saldo tampil setelah data tersedia</div>
                             <div class="chart">
-<i>
-</i>
-<i>
-</i>
-<i>
-</i>
-<i>
-</i>
-<i>
-</i>
-<i>
-</i>
-<i>
-</i>
-<i>
-</i>
-</div>
+                                <i>
+                                </i>
+                                <i>
+                                </i>
+                                <i>
+                                </i>
+                                <i>
+                                </i>
+                                <i>
+                                </i>
+                                <i>
+                                </i>
+                                <i>
+                                </i>
+                                <i>
+                                </i>
+                            </div>
                         </div>
                         <div class="mini-card">
                             <div class="mini-icon">✓</div>
                             <div>
-<strong>Iuran tercatat</strong>
+                                <strong>Iuran tercatat</strong>
                                 <div class="sub">Menunggu data kas</div>
                             </div>
                         </div>
@@ -118,42 +114,42 @@
                     </div>
                 </div>
             </section>
-</main>
-<footer class="footer">
+        </main>
+        <footer class="footer">
             <a class="brand" href="index.html">
-<img class="brand-image" src="./assets/kasmate-logo.png"
-                    alt="Logo Kasmate">Kasmate</a>
-<span>© 2026 Kasmate · Urusan kas kelas jadi lebih mudah.</span>
+                <img class="brand-image" src="./assets/kasmate-logo.png" alt="Logo Kasmate">Kasmate</a>
+            <span>© 2026 Kasmate · Urusan kas kelas jadi lebih mudah.</span>
         </footer>
-</div>
-<div class="modal-back" id="modalBack" onclick="if(event.target===this)closeModal()">
-<div class="modal">
-<h2>Daftarkan kelas</h2>
-<p>Buat ruang baru untuk mengelola kas kelas.</p>
-<div class="field">
-<label>Nama kelas</label>
-<input id="newClassName" placeholder="Contoh: XI PPLG 2">
-</div>
-<div class="field">
-<label>Nama sekolah</label>
-<input id="newSchool" placeholder="Contoh: SMK Telkom Bandung">
-</div>
-<div class="field">
-<label>Tahun ajaran</label>
-<select id="newYear">
-<option>2026/2027</option>
-<option>2025/2026</option>
-</select>
-</div>
-<div class="modal-actions">
-<button class="secondary" onclick="closeModal()">Batal</button>
-<button class="primary" onclick="addClass()">Buat kelas</button>
-</div>
-</div>
-</div>
-<div class="toast" id="toast">
-</div>
-<script src="./js/app.js">
-</script>
+    </div>
+    <div class="modal-back" id="modalBack" onclick="if(event.target===this)closeModal()">
+        <div class="modal">
+            <h2>Daftarkan kelas</h2>
+            <p>Buat ruang baru untuk mengelola kas kelas.</p>
+            <div class="field">
+                <label>Nama kelas</label>
+                <input id="newClassName" placeholder="Contoh: XI PPLG 2">
+            </div>
+            <div class="field">
+                <label>Nama sekolah</label>
+                <input id="newSchool" placeholder="Contoh: SMK Telkom Bandung">
+            </div>
+            <div class="field">
+                <label>Tahun ajaran</label>
+                <select id="newYear">
+                    <option>2026/2027</option>
+                    <option>2025/2026</option>
+                </select>
+            </div>
+            <div class="modal-actions">
+                <button class="secondary" onclick="closeModal()">Batal</button>
+                <button class="primary" onclick="addClass()">Buat kelas</button>
+            </div>
+        </div>
+    </div>
+    <div class="toast" id="toast">
+    </div>
+    <script src="./js/app.js">
+    </script>
 </body>
+
 </html>
