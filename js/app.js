@@ -332,6 +332,8 @@ function updateNav() {
     if (homeLink) homeLink.hidden = !!user;
     if (aboutLink) aboutLink.hidden = !!user;
     if (dashboardLink) dashboardLink.hidden = !user;
+    const transactionsLink = document.querySelector('[data-page="transactions"]');
+    if (transactionsLink) transactionsLink.hidden = !user;
     const createClass = document.getElementById('classCreateBtn');
     if (createClass) createClass.hidden = !!user && !canCreateClass();
     updateStudentRegistrationAvailability();
