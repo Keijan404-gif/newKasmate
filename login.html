@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#E31E24">
+<title>Kasmate — Kas kelas, lebih tertata</title>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="shell">
+<header class="topbar">
+            <a class="brand" href="index.html">
+<img class="brand-image" src="./assets/kasmate-logo.png"
+                    alt="Logo Kasmate">Kasmate</a>
+<button class="mobile-menu"
+                onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+            <nav class="nav" id="nav">
+<a data-page="home"  href="index.html">Home</a>
+<a
+                    data-page="about" href="about.html">About</a>
+<a data-page="dashboard"
+                    href="dashboard.html">Dashboard</a>
+<a data-page="transactions" href="transactions.html">Transaksi</a>
+<a data-page="settings"
+                    href="settings.html">Settings</a>
+<button class="nav-cta" id="accountBtn"
+                    onclick="accountAction()">Masuk</button>
+</nav>
+        </header>
+<main>
+<section class="page active" id="login">
+                <div class="auth-shell">
+                    <div class="auth-aside">
+<span class="brand" style="color:white">
+<img class="brand-image"
+                                src="./kasmate-logo.png" alt="Logo Kasmate">Kasmate</span>
+                        <h2>Senang bertemu lagi!</h2>
+                        <p>Masuk dan lanjutkan kelola kas kelasmu dengan lebih praktis.</p>
+                    </div>
+                    <div class="auth-content">
+                        <form class="auth-form" id="loginForm">
+                            <h1>Masuk ke Kasmate</h1>
+                            <p>Masukkan username dan kata sandi akunmu.</p>
+                            <div class="notice" id="loginNotice">
+</div>
+                            <div class="field">
+<label>Username</label>
+<input type="text" placeholder="Username"
+                                    required>
+</div>
+                            <div class="field">
+<label>Kata sandi</label>
+<input type="password"
+                                    placeholder="Masukkan kata sandi" required minlength="8">
+</div>
+<button
+                                class="primary">Masuk</button>
+                            <div class="switch">Belum punya akun? <button type="button" onclick="go('register')">Daftar
+                                    sekarang</button>
+</div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+</main>
+<footer class="footer">
+            <a class="brand" href="index.html">
+<img class="brand-image" src="./assets/kasmate-logo.png"
+                    alt="Logo Kasmate">Kasmate</a>
+<span>© 2026 Kasmate · Urusan kas kelas jadi lebih mudah.</span>
+        </footer>
+</div>
+<div class="modal-back" id="modalBack" onclick="if(event.target===this)closeModal()">
+<div class="modal">
+<h2>Daftarkan kelas</h2>
+<p>Buat ruang baru untuk mengelola kas kelas.</p>
+<div class="field">
+<label>Nama kelas</label>
+<input id="newClassName" placeholder="Contoh: XI PPLG 2">
+</div>
+<div class="field">
+<label>Nama sekolah</label>
+<input id="newSchool" placeholder="Contoh: SMK Telkom Bandung">
+</div>
+<div class="field">
+<label>Tahun ajaran</label>
+<select id="newYear">
+<option>2026/2027</option>
+<option>2025/2026</option>
+</select>
+</div>
+<div class="modal-actions">
+<button class="secondary" onclick="closeModal()">Batal</button>
+<button class="primary" onclick="addClass()">Buat kelas</button>
+</div>
+</div>
+</div>
+<div class="toast" id="toast">
+</div>
+<script src="./js/app.js">
+</script>
+</body>
+</html>
