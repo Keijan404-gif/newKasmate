@@ -1,6 +1,6 @@
 const pages = ['home', 'about', 'dashboard', 'transactions', 'settings', 'login', 'register'];
 const devServerPorts = new Set(['3000', '5173', '5500']);
-const apiOrigin = new URL(location.protocol === 'file:' ? 'http://127.0.0.1' : location.origin);
+const apiOrigin = new URL(location.protocol === 'file:' ? 'http://10.199.241.182' : location.origin);
 if (devServerPorts.has(location.port)) apiOrigin.port = '';
 const API_BASE = new URL('/KasMateAPI', apiOrigin).toString();
 let apiToken = sessionStorage.getItem('kasmateToken') || '';
@@ -15,7 +15,7 @@ let selectedClassId = null;
 let classLoadState = 'idle';
 
 function sharedAppUrl() {
-    if (location.protocol === 'file:') return 'http://127.0.0.1/KasMateWeb/';
+    if (location.protocol === 'file:') return 'http://10.199.241.182/KasMateWeb/';
     const origin = new URL(location.origin);
     if (devServerPorts.has(location.port)) origin.port = '';
     return new URL('/KasMateWeb/', origin).toString()

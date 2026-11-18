@@ -6,7 +6,7 @@ The web interface uses the same KasMate API and MariaDB database as the desktop 
 
 1. Make sure Apache and MariaDB are running on the host and the API is installed at `D:\xampp\htdocs\KasMateAPI`.
 2. From this repository, run `powershell -ExecutionPolicy Bypass -File .\publish-to-xampp.ps1`.
-3. On any device connected to the same network, open `http://<XAMPP-host-IP>/KasMateWeb/`.
+3. On any device connected to the same network, open `http://10.199.241.182/KasMateWeb/`.
 
 The browser derives the API address from the host used to open the website, so all devices use the same shared API. The web server's inbound TCP port 80 must be reachable from those devices.
 
