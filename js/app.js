@@ -6,13 +6,49 @@ const API_BASE = new URL('/KasMateAPI', apiOrigin).toString();
 let apiToken = sessionStorage.getItem('kasmateToken') || '';
 let user = null;
 try { user = JSON.parse(sessionStorage.getItem('kasmateUser') || 'null'); } catch { sessionStorage.removeItem('kasmateUser'); }
-if (!apiToken) user = null;
+const deniedStoredSession = Boolean(apiToken && user && !isWaliKelasAccount(user));
+if (deniedStoredSession) sessionStorage.setItem('kasmateRoleDenied', '1');
+if (!apiToken || !user || !isWaliKelasAccount(user)) {
+    apiToken = '';
+    user = null;
+    sessionStorage.removeItem('kasmateToken');
+    sessionStorage.removeItem('kasmateUser');
+}
 let language = localStorage.getItem('kasmateLanguage') || 'id';
 let classes = [];
 let dbStudents = [];
 let dbTransactions = [];
 let selectedClassId = null;
 let classLoadState = 'idle';
+let pendingDatabaseRequests = 0;
+let databaseLoadingTimer;
+let databaseLoadingStartedAt = 0;
+
+function beginDatabaseLoading() {
+    if (pendingDatabaseRequests === 0) databaseLoadingStartedAt = Date.now();
+    pendingDatabaseRequests++;
+    let bar = document.getElementById('databaseLoadingBar');
+    if (!bar) {
+        bar = document.createElement('div');
+        bar.id = 'databaseLoadingBar';
+        bar.className = 'database-loading-bar';
+        bar.setAttribute('role', 'progressbar');
+        bar.setAttribute('aria-label', language === 'en' ? 'Loading database data' : 'Memuat data database');
+        document.body.appendChild(bar)
+    }
+    clearTimeout(databaseLoadingTimer);
+    bar.classList.add('is-loading')
+}
+
+function endDatabaseLoading() {
+    pendingDatabaseRequests = Math.max(0, pendingDatabaseRequests - 1);
+    if (pendingDatabaseRequests) return;
+    const bar = document.getElementById('databaseLoadingBar');
+    if (!bar) return;
+    const visibleFor = Date.now() - databaseLoadingStartedAt;
+    const remaining = Math.max(0, 1200 - visibleFor);
+    databaseLoadingTimer = setTimeout(() => bar.remove(), remaining)
+}
 
 function sharedAppUrl() {
     if (location.protocol === 'file:') return 'http://10.199.241.182/KasMateWeb/';
@@ -26,9 +62,24 @@ function normalizeRole(value) {
     if (['bendahara', 'treasurer', 'admin', 'administrator'].includes(raw)) return 'bendahara';
     return raw || 'guru'
 }
+function isWaliKelasAccount(account) {
+    const role = String(account?.databaseRole || '').trim().toLowerCase().replace(/[\s-]+/g, '_');
+    return role === 'wali_kelas'
+}
+function waliKelasOnlyMessage() {
+    return language === 'en' ? 'Only Wali Kelas accounts can log in.' : 'Hanya akun dengan peran Wali Kelas yang dapat masuk.'
+}
+function rejectNonWaliSession(noticeId) {
+    apiToken = '';
+    user = null;
+    sessionStorage.removeItem('kasmateToken');
+    sessionStorage.removeItem('kasmateUser');
+    showNotice(noticeId, waliKelasOnlyMessage());
+    return false
+}
 function accountFromAuth(data, username) {
     const profile = data.user || data.profile || data;
-    const rawRole = profile.role || data.role || 'wali_kelas';
+    const rawRole = profile.role || data.role || '';
     return {
         id: profile.id ?? data.id ?? null,
         name: profile.name || data.name || username,
@@ -51,6 +102,8 @@ function saveSession(token, account) {
     sessionStorage.setItem('kasmateUser', JSON.stringify(account))
 }
 async function apiRequest(path, { method = 'GET', body, auth = true } = {}) {
+    beginDatabaseLoading();
+    try {
     const headers = { Accept: 'application/json' };
     if (body !== undefined) headers['Content-Type'] = 'application/json';
     if (auth && apiToken) headers.Authorization = 'Bearer ' + apiToken;
@@ -77,6 +130,9 @@ async function apiRequest(path, { method = 'GET', body, auth = true } = {}) {
         throw error
     }
     return result.data ?? result
+    } finally {
+        endDatabaseLoading()
+    }
 }
 function money(value) {
     if (typeof value === 'number') return new Intl.NumberFormat(language === 'en' ? 'en-US' : 'id-ID', {
@@ -486,7 +542,13 @@ document.getElementById('registerForm')?.addEventListener('submit', async e => {
         await apiRequest('auth/register.php', { method: 'POST', auth: false, body: { name, username, password } });
         const login = await apiRequest('auth/login.php', { method: 'POST', auth: false, body: { username, password } });
         if (!login.token) throw new Error(language === 'en' ? 'The API did not return a login token.' : 'API tidak mengirim token masuk.');
-        saveSession(login.token, accountFromAuth(login, username));
+const account = accountFromAuth(login, username);
+        if (!isWaliKelasAccount(account)) {
+            e.target.reset();
+            rejectNonWaliSession('registerNotice');
+            return
+        }
+        saveSession(login.token, account);
         e.target.reset();
         go('dashboard')
     }
@@ -504,7 +566,12 @@ document.getElementById('loginForm')?.addEventListener('submit', async e => {
     try {
         const data = await apiRequest('auth/login.php', { method: 'POST', auth: false, body: { username, password } });
         if (!data.token) throw new Error(language === 'en' ? 'The API did not return a login token.' : 'API tidak mengirim token masuk.');
-        saveSession(data.token, accountFromAuth(data, username));
+const account = accountFromAuth(data, username);
+        if (!isWaliKelasAccount(account)) {
+            rejectNonWaliSession('loginNotice');
+            return
+        }
+        saveSession(data.token, account);
         e.target.reset();
         go('dashboard')
     }
@@ -720,6 +787,10 @@ document.getElementById('languageSelect')?.addEventListener('change', event => {
     if (document.getElementById('profileForm')) loadProfile();
 });
 const current = ({ '': 'home', 'index.html': 'home', 'about.html': 'about', 'dashboard.html': 'dashboard', 'transactions.html': 'transactions', 'settings.html': 'settings', 'login.html': 'login', 'register.html': 'register' })[location.pathname.split('/').pop()] || 'home';
+if (current === 'login' && sessionStorage.getItem('kasmateRoleDenied') === '1') {
+    sessionStorage.removeItem('kasmateRoleDenied');
+    showNotice('loginNotice', waliKelasOnlyMessage())
+}
 if (['dashboard', 'transactions'].includes(current) && !user) go('login');
 else if (user && ['login', 'register'].includes(current)) go('dashboard');
 else {
