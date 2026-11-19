@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#E31E24">
     <link rel="icon" type="image/png" href="./assets/kasmate-logo.png">
     <title>Kasmate — Kas kelas, lebih tertata</title>
-    <link rel="stylesheet" href="./css/style.css?v=20261119-loading2">
+    <link rel="stylesheet" href="./css/style.css?v=20261119-copy">
 </head>
 
 <body>
@@ -29,53 +29,41 @@
             <section class="page active" id="home">
                 <div class="hero">
                     <div>
-                        <h1>Kas kelas,<br>
-                            <em>lebih tertata.</em>
+                        <h1><span data-t="homeHeadline">Kas kelas,</span><br>
+                            <em data-t="homeHeadlineAccent">lebih jelas dan terpercaya.</em>
                         </h1>
-                        <p class="lead">Kelola uang kas, catat iuran, dan pantau saldo kelas dalam satu tempat. Biar
-                            urusan kas jadi jelas untuk semua.</p>
+                        <p class="lead" data-t="homeHeroCopy">Kasmate berangkat dari kebutuhan akan informasi kas kelas yang tertata, mudah dipahami, dan dapat dipercaya oleh seluruh warga kelas.</p>
                         <div class="actions">
-                            <button class="primary" onclick="go('register')">Mulai kelola kas
-                                <span>→</span>
+                            <button class="primary" onclick="go('register')"><span data-t="homeCta">Mulai sebagai guru</span>
+                                <span aria-hidden="true">→</span>
                             </button>
-                            <button class="secondary" onclick="go('about')">Kenali
-                                Kasmate</button>
+                            <button class="secondary" onclick="go('about')" data-t="aboutCta">Apa itu Kasmate?</button>
                         </div>
                         <div class="trust">
                             <div class="avatars">
                                 <span>👩🏻</span>
                                 <span>👨🏽</span>
                                 <span>👩🏾</span>
-                            </div>Dirancang
-                            untuk kelas yang kompak
+                            </div><span data-t="homeTrust">Satu ekosistem untuk guru, bendahara, admin, dan murid.</span>
                         </div>
                     </div>
                     <div class="hero-art">
                         <img class="hero-image" src="./assets/cash-management.jpg" alt="Meja berisi laporan keuangan, laptop, kalkulator, dan uang tunai">
                     </div>
                 </div>
-                <div class="section">
+                <div class="section home-story">
                     <div class="section-title">
-                        <h2>Semua urusan kas, satu tempat</h2>
-                        <p>Alat sederhana untuk membuat pengelolaan kas kelas terasa lebih ringan dan transparan.</p>
+                        <h2 data-t="homeStoryTitle">Latar belakang dan tujuan Kasmate</h2>
+                        <p data-t="homeStoryIntro">Kasmate hadir untuk membuat informasi kas kelas lebih tertata dan mudah dipahami.</p>
                     </div>
-                    <div class="features">
-                        <article class="feature">
-                            <div class="icon">▦</div>
-                            <h3>Ruang untuk setiap kelas</h3>
-                            <p>Buat kelas dan kelola kebutuhan kasnya secara terpisah, dengan informasi yang selalu
-                                mudah ditemukan.</p>
+                    <div class="home-purpose">
+                        <article>
+                            <h3 data-t="homeBackgroundTitle">Latar belakang</h3>
+                            <p data-t="homeBackgroundCopy">Catatan iuran, pengeluaran, dan saldo kelas sering tersebar di buku, pesan, atau berkas yang berbeda. Keadaan ini membuat informasi sulit ditelusuri dan perkembangan kas tidak selalu mudah dipahami.</p>
                         </article>
-                        <article class="feature">
-                            <div class="icon">♧</div>
-                            <h3>Data siswa yang rapi</h3>
-                            <p>Lihat anggota kelas, status iuran, dan informasi siswa dalam satu daftar yang praktis.
-                            </p>
-                        </article>
-                        <article class="feature">
-                            <div class="icon">♙</div>
-                            <h3>Peran yang jelas</h3>
-                            <p>Berikan akses sesuai tanggung jawab: admin, bendahara, atau anggota kelas.</p>
+                        <article>
+                            <h3 data-t="homePurposeTitle">Tujuan Kasmate</h3>
+                            <p data-t="homePurposeCopy">Kasmate bertujuan menyajikan catatan kas secara terpusat dan transparan, supaya bendahara dapat mengelola pencatatan dengan tertib, guru dapat memantau keadaan kelas tanpa mengubah data, dan murid dapat mengetahui informasi kas yang relevan bagi mereka.</p>
                         </article>
                     </div>
                 </div>
@@ -114,7 +102,7 @@
     </div>
     <div class="toast" id="toast">
     </div>
-    <script src="./js/app.js?v=20261119-loading2">
+    <script src="./js/app.js?v=20261119-copy">
     </script>
 </body>
 

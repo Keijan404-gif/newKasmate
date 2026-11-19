@@ -419,6 +419,68 @@ const translations = {
     }
 }
     ;
+Object.assign(translations.id, {
+    homeHeadline: 'Kas kelas,',
+    homeHeadlineAccent: 'lebih jelas dan terpercaya.',
+    homeHeroCopy: 'Kasmate berangkat dari kebutuhan akan informasi kas kelas yang tertata, mudah dipahami, dan dapat dipercaya oleh seluruh warga kelas.',
+    homeCta: 'Mulai sebagai guru',
+    aboutCta: 'Apa itu Kasmate?',
+    homeTrust: 'Satu ekosistem untuk guru, bendahara, admin, dan murid.',
+    homeStoryTitle: 'Latar belakang dan tujuan Kasmate',
+    homeStoryIntro: 'Kasmate hadir untuk membuat informasi kas kelas lebih tertata dan mudah dipahami.',
+    homeBackgroundTitle: 'Latar belakang',
+    homeBackgroundCopy: 'Catatan iuran, pengeluaran, dan saldo kelas sering tersebar di buku, pesan, atau berkas yang berbeda. Keadaan ini membuat informasi sulit ditelusuri dan perkembangan kas tidak selalu mudah dipahami.',
+    homePurposeTitle: 'Tujuan Kasmate',
+    homePurposeCopy: 'Kasmate bertujuan menyajikan catatan kas secara terpusat dan transparan, supaya bendahara dapat mengelola pencatatan dengan tertib, guru dapat memantau keadaan kelas tanpa mengubah data, dan murid dapat mengetahui informasi kas yang relevan bagi mereka.',
+    aboutTitle: 'Apa itu',
+    aboutIntro: 'Kasmate adalah ekosistem digital untuk membantu warga kelas memahami informasi kas secara tertata dan transparan. Website, desktop, dan Android menyediakan pengalaman yang berbeda sesuai peran masing-masing.',
+    aboutTeacherDetail: 'Website Kasmate ditujukan khusus untuk guru. Guru dapat melihat saldo, transaksi, iuran, dan data siswa di kelas yang menjadi tanggung jawabnya. Akses website bersifat hanya-baca, sehingga guru dapat memantau tanpa mengelola atau mengubah data.',
+    aboutCalloutTitle: 'Satu informasi kas, akses sesuai peran.',
+    aboutCalloutCopy: 'Setiap versi Kasmate dirancang untuk membantu penggunanya menjalankan tanggung jawab yang berbeda.',
+    platformWeb: 'Website · Guru',
+    platformDesktop: 'Desktop · Bendahara/Admin',
+    platformAndroid: 'Android · Murid',
+    platformWebLabel: 'WEBSITE · PEMANTAUAN',
+    platformWebTitle: 'Untuk guru',
+    platformWebCopy: 'Guru membuka website untuk memantau keadaan kas kelas, melihat riwayat transaksi dan pengeluaran, serta meninjau informasi siswa dan iuran. Website ini memberi akses untuk melihat data saja; pencatatan dan perubahan data tidak dilakukan oleh guru melalui website.',
+    platformDesktopLabel: 'DESKTOP · PENGELOLAAN',
+    platformDesktopTitle: 'Untuk bendahara dan admin',
+    platformDesktopCopy: 'Versi desktop menjadi ruang kerja bendahara dan admin untuk mengelola operasional kas kelas. Di sinilah data kelas dan siswa ditata, transaksi dicatat, serta informasi iuran diperbarui agar catatan tetap rapi dan dapat dipantau.',
+    platformAndroidLabel: 'ANDROID · INFORMASI SISWA',
+    platformAndroidTitle: 'Untuk murid',
+    platformAndroidCopy: 'Aplikasi Android ditujukan bagi murid agar mereka dapat melihat informasi kas kelas yang berkaitan dengan dirinya, seperti informasi iuran dan status pembayaran. Murid menerima informasi dengan mudah melalui perangkat yang mereka gunakan sehari-hari.'
+});
+Object.assign(translations.en, {
+    homeHeadline: 'Class funds,',
+    homeHeadlineAccent: 'clearer and easier to trust.',
+    homeHeroCopy: 'Kasmate was created to make class fund information organized, easy to understand, and trustworthy for everyone in the class.',
+    homeCta: 'Get started as a teacher',
+    aboutCta: 'What is Kasmate?',
+    homeTrust: 'One ecosystem for teachers, treasurers, administrators, and students.',
+    homeStoryTitle: 'Kasmate’s background and purpose',
+    homeStoryIntro: 'Kasmate makes class fund information more organized and easier to understand.',
+    homeBackgroundTitle: 'The background',
+    homeBackgroundCopy: 'Contribution, expense, and balance records are often scattered across notebooks, messages, and separate files. This makes information hard to trace and the state of class funds difficult to understand.',
+    homePurposeTitle: 'Kasmate’s purpose',
+    homePurposeCopy: 'Kasmate brings class fund records together in a clear, transparent view. Treasurers can keep records organized, teachers can monitor the class without changing data, and students can see the fund information relevant to them.',
+    aboutTitle: 'What is',
+    aboutIntro: 'Kasmate is a digital ecosystem that helps class communities understand fund information in an organized and transparent way. Its web, desktop, and Android experiences are tailored to different responsibilities.',
+    aboutTeacherDetail: 'The Kasmate website is designed specifically for teachers. Teachers can view balances, transactions, contributions, and student records for the classes they oversee. Website access is read-only, so teachers can monitor information without managing or changing it.',
+    aboutCalloutTitle: 'One set of fund information, access for each role.',
+    aboutCalloutCopy: 'Each Kasmate version helps its users carry out different responsibilities.',
+    platformWeb: 'Website · Teachers',
+    platformDesktop: 'Desktop · Treasurers/Admins',
+    platformAndroid: 'Android · Students',
+    platformWebLabel: 'WEBSITE · MONITORING',
+    platformWebTitle: 'For teachers',
+    platformWebCopy: 'Teachers use the website to monitor class funds, review transaction and expense history, and view student and contribution information. The website is read-only; teachers do not record transactions or manage and change class data here.',
+    platformDesktopLabel: 'DESKTOP · MANAGEMENT',
+    platformDesktopTitle: 'For treasurers and administrators',
+    platformDesktopCopy: 'The desktop version is the workspace for treasurers and administrators to manage class fund operations. They organize class and student records, record transactions, and update contribution information so the records stay clear and reviewable.',
+    platformAndroidLabel: 'ANDROID · STUDENT INFORMATION',
+    platformAndroidTitle: 'For students',
+    platformAndroidCopy: 'The Android app is for students to view class fund information relevant to them, such as contributions and payment status. It makes this information easy to check on a device they use every day.'
+});
 const enText = {
     "Ubah kata sandi": "Change password", "Kata sandi saat ini": "Current password", "Kata sandi baru": "New password", "Konfirmasi kata sandi baru": "Confirm new password", "Kata sandi saat ini tidak sesuai.": "Current password is incorrect.", "Konfirmasi kata sandi baru belum cocok.": "New passwords do not match.", "Kata sandi berhasil diubah.": "Password updated.", "Kas kelas,": "Class funds,", "lebih tertata.": "better organized.", "Kelola uang kas, catat iuran, dan pantau saldo kelas dalam satu tempat. Biar urusan kas jadi jelas untuk semua.": "Manage class funds, record contributions, and track balances in one place. Keep everything clear for everyone.", "Mulai kelola kas": "Start managing funds", "Kenali Kasmate": "Discover Kasmate", "Semua urusan kas, satu tempat": "All class funds, in one place", "Ruang untuk setiap kelas": "A space for every class", "Data siswa yang rapi": "Organized student records", "Peran yang jelas": "Clear responsibilities", "Urusan kas kelas,": "Class funds,", "lebih tenang.": "with less hassle.", "Kasmate membantu kelas mencatat iuran, memahami arus kas, dan bekerja sama dengan lebih transparan.": "Kasmate helps classes track contributions, understand cash flow, and work together transparently.", "Rapi untuk bendahara.": "Organized for treasurers.", "Jelas untuk semua.": "Clear for everyone.", "Transparan": "Transparent", "Praktis": "Practical", "Bersama": "Together", "Catatan teratur": "Organized records", "Kelas lebih kompak": "A closer class", "Selamat datang!": "Welcome!", "Ringkasan kas kelasmu.": "Your class fund overview.", "Kelola ruang kelas dan data siswa dari satu tempat.": "Manage classes and student records in one place.", "Kelasmu, tertata.": "Your class, organized.", "Buat kelas untuk mulai mengelola kas bersama.": "Create a class to start managing funds together.", "Daftar kelas": "Classes", "Pilih kelas yang ingin dikelola.": "Choose a class to manage.", "Cari nama kelas atau sekolah…": "Search class or school…", "Semua tahun ajaran": "All school years", "Data siswa": "Students", "Daftar siswa pada kelas yang dipilih.": "Student list for the selected class.", "Pilih kelas untuk melihat data siswa.": "Choose a class to view students.", "Tidak ada kelas, ": "No classes yet, ", "buat kelas": "create a class", "Buat akun baru": "Create an account", "Nama lengkap": "Full name", "Kata sandi": "Password", "Minimal 8 karakter": "At least 8 characters", "Kelas": "Class", "Daftar gratis": "Create account", "Masuk": "Log in", "Senang bertemu lagi!": "Welcome back!", "Masukkan email dan kata sandi akunmu.": "Enter your username and password.", "Daftar sekarang": "Register", "Panel admin": "Admin panel", "Kelola data pengguna dan kelas di Kasmate.": "Manage users and classes in Kasmate.", "Guru / Bendahara": "Teacher / Treasurer", "Pengaturan": "Settings", "Atur tampilan, bahasa, dan informasi profilmu.": "Manage your appearance, language, and profile.", "Tampilan": "Appearance", "Tema": "Theme", "Pilih tampilan yang nyaman untukmu.": "Choose a look that feels right.", "Terang": "Light", "Gelap": "Dark", "Bahasa": "Language", "Profil": "Profile", "Nama": "Name", "Kelas yang diajar (Wali kelas)": "Class taught (Homeroom teacher)", "Simpan profil": "Save profile", "Keluar": "Log out", "Batal": "Cancel", "Daftarkan kelas": "Register a class", "Buat ruang baru untuk mengelola kas kelas.": "Create a new space to manage class funds.", "Nama sekolah": "School name", "Tahun ajaran": "School year", "Buat kelas": "Create class", "Home": "Home", "About": "About", "Admin": "Admin", "Settings": "Settings", "Aktif": "Active", "Arsip": "Archived", "Hapus": "Delete", "Tidak ada kelas yang cocok dengan pencarian.": "No classes match your search."
 }

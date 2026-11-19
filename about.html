@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#E31E24">
     <link rel="icon" type="image/png" href="./assets/kasmate-logo.png">
     <title>Kasmate — Kas kelas, lebih tertata</title>
-    <link rel="stylesheet" href="./css/style.css?v=20261119-loading2">
+    <link rel="stylesheet" href="./css/style.css?v=20261119-copy">
 </head>
 
 <body>
@@ -29,13 +29,12 @@
             <section class="page active" id="about">
                 <div class="about-hero">
                     <div class="about-copy">
-                        <span class="about-kicker">KASMATE · CLASS FUND, MADE CLEAR</span>
-                        <h1>Urusan kas kelas,<br>
-                            <em>lebih tenang.</em>
+                        <h1><span data-t="aboutTitle">Apa itu</span><br>
+                            <em>Kasmate?</em>
                         </h1>
-                        <p>Kasmate membantu kelas mencatat iuran, memahami arus kas, dan bekerja sama dengan lebih
-                            transparan.</p>
-                        <button class="primary" onclick="go('register')">Mulai bersama Kasmate
+                        <p data-t="aboutIntro">Kasmate adalah ekosistem digital untuk membantu warga kelas memahami informasi kas secara tertata dan transparan. Website, desktop, dan Android menyediakan pengalaman yang berbeda sesuai peran masing-masing.</p>
+                        <p data-t="aboutTeacherDetail">Website Kasmate ditujukan khusus untuk guru. Guru dapat melihat saldo, transaksi, iuran, dan data siswa di kelas yang menjadi tanggung jawabnya. Akses website bersifat hanya-baca, sehingga guru dapat memantau tanpa mengelola atau mengubah data.</p>
+                        <button class="primary" onclick="go('register')"><span data-t="homeCta">Mulai sebagai guru</span>
                             <span>→</span>
                         </button>
                     </div>
@@ -44,31 +43,31 @@
                         </div>
                         <div class="about-feature">
                             <span class="about-feature-icon">✦</span>
-                            <h2>Rapi untuk bendahara.<br>Jelas untuk semua.</h2>
-                            <p>Satu ruang bersama untuk setiap kelas.</p>
+                            <h2 data-t="aboutCalloutTitle">Satu informasi kas, akses sesuai peran.</h2>
+                            <p data-t="aboutCalloutCopy">Setiap versi Kasmate dirancang untuk membantu penggunanya menjalankan tanggung jawab yang berbeda.</p>
                             <div class="about-tags">
-                                <span>Transparan</span>
-                                <span>Praktis</span>
-                                <span>Bersama</span>
+                                <span data-t="platformWeb">Website · Guru</span>
+                                <span data-t="platformDesktop">Desktop · Bendahara/Admin</span>
+                                <span data-t="platformAndroid">Android · Murid</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="about-values">
+                <div class="about-platforms">
                     <article>
-                        <b>01</b>
-                        <h3>Catatan teratur</h3>
-                        <p>Semua informasi kas dapat ditata dalam satu tempat.</p>
+                        <span class="platform-label" data-t="platformWebLabel">WEBSITE · PEMANTAUAN</span>
+                        <h3 data-t="platformWebTitle">Untuk guru</h3>
+                        <p data-t="platformWebCopy">Guru membuka website untuk memantau keadaan kas kelas, melihat riwayat transaksi dan pengeluaran, serta meninjau informasi siswa dan iuran. Website ini memberi akses untuk melihat data saja; pencatatan dan perubahan data tidak dilakukan oleh guru melalui website.</p>
                     </article>
                     <article>
-                        <b>02</b>
-                        <h3>Peran yang jelas</h3>
-                        <p>Setiap orang memahami tanggung jawabnya.</p>
+                        <span class="platform-label" data-t="platformDesktopLabel">DESKTOP · PENGELOLAAN</span>
+                        <h3 data-t="platformDesktopTitle">Untuk bendahara dan admin</h3>
+                        <p data-t="platformDesktopCopy">Versi desktop menjadi ruang kerja bendahara dan admin untuk mengelola operasional kas kelas. Di sinilah data kelas dan siswa ditata, transaksi dicatat, serta informasi iuran diperbarui agar catatan tetap rapi dan dapat dipantau.</p>
                     </article>
                     <article>
-                        <b>03</b>
-                        <h3>Kelas lebih kompak</h3>
-                        <p>Informasi yang mudah diakses membantu semua anggota bekerja sama.</p>
+                        <span class="platform-label" data-t="platformAndroidLabel">ANDROID · INFORMASI SISWA</span>
+                        <h3 data-t="platformAndroidTitle">Untuk murid</h3>
+                        <p data-t="platformAndroidCopy">Aplikasi Android ditujukan bagi murid agar mereka dapat melihat informasi kas kelas yang berkaitan dengan dirinya, seperti informasi iuran dan status pembayaran. Murid menerima informasi dengan mudah melalui perangkat yang mereka gunakan sehari-hari.</p>
                     </article>
                 </div>
             </section>
@@ -106,7 +105,7 @@
     </div>
     <div class="toast" id="toast">
     </div>
-    <script src="./js/app.js?v=20261119-loading2">
+    <script src="./js/app.js?v=20261119-copy">
     </script>
 </body>
 
